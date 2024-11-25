@@ -1,84 +1,119 @@
-import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sama_bus/core/statefull/custom_text_field.dart';
+import 'package:sama_bus/core/statefull/socialAuth.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Stack(
-          children: [
-            Image.asset(
-              'assets/images/mainBckg.png',
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: w * 0.05),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SvgPicture.asset(
-                    'assets/images/logo.svg',
-                  ),
-                  Gap(h * 0.02),
-                  
-                  TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'name'.tr(), // Translation key for "Name"
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                    ),
-                  ),
-                  Gap(h * 0.01),
-
-                  // Password Field
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText:
-                          'password'.tr(), // Translation key for "Password"
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                    ),
-                  ),
-                  Gap(h * 0.01),
-
-                  // Login Button
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[700],
-                      minimumSize: const Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: () {
-                      // Handle login action
-                    },
-                    child: Text(
-                      'login'.tr(), // Translation key for "Login"
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Gap(h * 0.01),
-
-                  // Add Social Media Login Section if needed
-                ],
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                'assets/images/background.png',
+                fit: BoxFit.cover,
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: w * 0.07),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Gap(h * 0.09),
+                    Image.asset(
+                      'assets/images/logo.png',
+                      width: w * 0.6,
+                    ),
+                    Gap(h * 0.02),
+                    Customtextfield(
+                      hintText: 'email'.tr(),
+                      textEditingController: emailController,
+                      prefix: const Icon(Icons.email),
+                    ),
+                    Gap(h * 0.01),
+                    Customtextfield(
+                      hintText: 'password'.tr(),
+                      textEditingController: passwordController,
+                      prefix: const Icon(Icons.lock),
+                      obscureText: true,
+                      suffix: InkWell(
+                        onTap: () {},
+                        child: const Icon(Icons.visibility_off),
+                      ),
+                    ),
+                    Gap(h * 0.02),
+                    InkWell(
+                      child: Text(
+                        'forget_password'.tr(),
+                      ),
+                    ),
+                    Gap(h * 0.02),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset(
+                          width: w * 0.3,
+                          'assets/images/leftDivider.png',
+                        ),
+                        Text('sign_in_with'.tr()),
+                        Image.asset(
+                          width: w * 0.3,
+                          'assets/images/rightDivider.png',
+                        ),
+                      ],
+                    ),
+                    Gap(h * 0.02),
+                    FilledButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                        elevation: WidgetStateProperty.all(5),
+                        fixedSize:
+                            WidgetStateProperty.all(Size(w * 0.8, h * 0.06)),
+                        backgroundColor:
+                            WidgetStateProperty.all(const Color(0xff1C26E4)),
+                      ),
+                      child: Text('login'.tr()),
+                    ),
+                    Gap(h * 0.02),
+                    const SocialAuth(),
+                    Gap(h * 0.02),
+                    Text(
+                        '${'dont_have_account'.tr()}  ${'create_account'.tr()}'),
+                    Gap(h * 0.02),
+                    InkWell(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white10,
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        width: w * 0.6,
+                        height: h * 0.05,
+                        child: Center(
+                          child: Text('join_yalaBus_now'.tr()),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
