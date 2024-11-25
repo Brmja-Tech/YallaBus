@@ -6,10 +6,14 @@ class Customtextfield extends StatelessWidget {
       {super.key,
       required this.hintText,
       required this.textEditingController,
-      this.prefix});
+      this.prefix,
+      this.suffix,
+      this.obscureText = false});
   final String hintText;
   final TextEditingController textEditingController;
   final dynamic prefix;
+  final dynamic suffix;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +22,18 @@ class Customtextfield extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints(minHeight: 50.h, maxHeight: 120.h),
         child: TextFormField(
+            obscureText: obscureText,
+            
             decoration: InputDecoration(
-          hintText: hintText,
-          fillColor: Colors.white,
-          filled: true,
-          prefixIcon: prefix,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.r),
-          ),
-        )),
+              hintText: hintText,
+              fillColor: Colors.white,
+              filled: true,
+              prefixIcon: prefix,
+              suffixIcon: suffix,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+              ),
+            )),
       ),
     );
   }
