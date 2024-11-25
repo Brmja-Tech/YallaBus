@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
 
-import '../../core/statefull/login_button.dart';
+import '../../../core/statefull/login_button.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
