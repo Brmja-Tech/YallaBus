@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
-import 'package:sama_bus/core/statefull/socialAuth.dart';
+import 'package:sama_bus/core/statefull/social_auth.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -37,6 +37,8 @@ class LoginScreen extends StatelessWidget {
                       'assets/images/logo.png',
                       width: w * 0.6,
                     ),
+                    Gap(h * 0.02),
+                    Text('${'welcome_back'.tr()},  ${'login_now'.tr()}'),
                     Gap(h * 0.02),
                     Customtextfield(
                       hintText: 'email'.tr(),
