@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
 
 class SocialAuth extends StatelessWidget {
   const SocialAuth({super.key});
@@ -13,8 +15,8 @@ class SocialAuth extends StatelessWidget {
       children: [
         Container(
           // padding: EdgeInsets.all(10),
-          width: 60,
-          height: 60,
+          width: 45.w,
+          height: 45.h,
           decoration: const BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle, // Keeps it circular
@@ -22,8 +24,8 @@ class SocialAuth extends StatelessWidget {
           child: Center(
             child: Image.asset(
               'assets/images/appleLogo.png',
-              width: 40, // Adjust width as needed
-              height: 40, // Adjust height as needed
+              width: 25.w, // Adjust width as needed
+              height: 25.h, // Adjust height as needed
               fit: BoxFit.contain, // Ensures the image fits nicely
             ),
           ),
@@ -31,8 +33,8 @@ class SocialAuth extends StatelessWidget {
         Gap(w * 0.1),
         Container(
           // padding: EdgeInsets.all(10),
-          width: 60,
-          height: 60,
+          width: 45.w,
+          height: 45.h,
           decoration: const BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle, // Keeps it circular
@@ -40,8 +42,8 @@ class SocialAuth extends StatelessWidget {
           child: Center(
             child: Image.asset(
               'assets/images/googleLogo.png',
-              width: 40, // Adjust width as needed
-              height: 40, // Adjust height as needed
+              width: 25.w, // Adjust width as needed
+              height: 25.h, // Adjust height as needed
               fit: BoxFit.contain, // Ensures the image fits nicely
             ),
           ),

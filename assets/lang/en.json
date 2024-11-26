@@ -10,6 +10,16 @@
     "join_yalaBus_now":"Join YalaBus Team",
     "welcome_back":"Welcome Back",
     "login_now":"Login Now",
+    "password_confirmtion":"Password Confirmtion",
+    "phone":"Phone",
+    "sign_up":"Sign Up",
+    "already_have_account":"Already have an account?",
+    "register":"Register",
+    "register_through":"Register through",
+    "select_set":"Select Set",
+    "reserved":"Reserved",
+    "your_seat":"Your Seat",
+    "available":"Available",
     "welcome_mr":"Welcome Mr.",
     "request_custom_ride":"Request A Custom Ride",
     "request_custom_ride_description":"Now you can request a custom ride , put your price , choose you destntion",
@@ -21,5 +31,4 @@
     "round_trip":"Round Trip",
     "select_luxury":"Select Luxury",
     "see_available":"See Available"
-
 }

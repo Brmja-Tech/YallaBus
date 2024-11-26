@@ -20,10 +20,9 @@ class Customtextfield extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 8.r),
       child: Container(
-        constraints: BoxConstraints(minHeight: 50.h, maxHeight: 120.h),
+        constraints: BoxConstraints(minHeight: 40.h, maxHeight: 50.h),
         child: TextFormField(
             obscureText: obscureText,
-            
             decoration: InputDecoration(
               hintText: hintText,
               fillColor: Colors.white,
