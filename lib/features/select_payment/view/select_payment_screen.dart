@@ -41,6 +41,7 @@ class SelectPaymentScreen extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             Gap(h * 0.01),
+            
             const TicketsContainer(
               duration: '6',
               endDate: '28 Nov 2024',
