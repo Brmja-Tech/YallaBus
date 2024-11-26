@@ -32,7 +32,7 @@ class _ConfirmTicketsState extends State<ConfirmTickets> {
           child: Center(
               child: Text(
             'continue_to_reservation'.tr(),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )),
         ),
       ),
