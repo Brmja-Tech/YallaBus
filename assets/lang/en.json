@@ -41,5 +41,14 @@
     "confirm_pay":"Pay Now",
     "personal_info":"personal Info",
     "change":"Change",
-    "save":"Save"
+    "save":"Save",
+    "more":"More",
+    "general":"General",
+    "profile":"Profile",
+    "lang":"Language",
+    "about":"About Us",
+    "privacy_policy":"privacy policy",
+    "terms_and_conditions":"Terms and Conditions",
+    "settings":"Settings",
+    "log_out":"Log Out"
 }
