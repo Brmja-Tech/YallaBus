@@ -13,9 +13,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      
       title: Text(text),
       centerTitle: true,
       forceMaterialTransparency: true,
+      bottom: const PreferredSize(
+        preferredSize: Size.fromHeight(1.0),
+        child: Divider(
+          color: Colors.black45,
+        ),
+      ),
     );
   }
 }

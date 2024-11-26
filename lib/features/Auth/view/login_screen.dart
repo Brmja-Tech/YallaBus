@@ -20,14 +20,17 @@ class LoginScreen extends StatelessWidget {
           onTap: () {
             FocusScope.of(context).unfocus();
           },
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Image.asset(
-                'assets/images/background.png',
-                fit: BoxFit.cover,
+          child: SingleChildScrollView(
+            child: Container(
+              height: h,
+              width: w,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/background.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
-              Padding(
+              child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: w * 0.07),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -81,9 +84,6 @@ class LoginScreen extends StatelessWidget {
                     FilledButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                        elevation: WidgetStateProperty.all(5),
                         fixedSize:
                             WidgetStateProperty.all(Size(w * 0.8, h * 0.06)),
                         backgroundColor:
@@ -114,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
+            ),
           ),
         ),
       ),
