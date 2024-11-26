@@ -30,5 +30,13 @@
     "select_date":"Select Date",
     "round_trip":"Round Trip",
     "select_luxury":"Select Luxury",
-    "see_available":"See Available"
+    "see_available":"See Available",
+    "payment_methods":"Payment Methods",
+    "my_ticket":"My Ticket",
+    "sets":"Sets",
+    "hours":"Hours",
+    "le":"LE",
+    "voda_cash":"Vodafone Cash",
+    "total_price":"Total Price",
+    "confirm_pay":"Pay Now"
 }
