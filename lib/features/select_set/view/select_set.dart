@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../core/statefull/custom_app_bar.dart';
+import 'components/select_seat_container.dart';
 
 class SelectSet extends StatefulWidget {
   const SelectSet({super.key});
@@ -57,7 +58,8 @@ class _SelectSetState extends State<SelectSet> {
                     ],
                   ),
                 ],
-              )
+              ),
+              BusSeatBookingScreen()
             ],
           ),
         ),
