@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
-import 'package:sama_bus/features/Auth/view/login_screen.dart';
 import 'package:sama_bus/features/home/view/home_screen.dart';
 
 Future<void> main() async {
