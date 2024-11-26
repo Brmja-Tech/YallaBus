@@ -38,5 +38,8 @@
     "le":"LE",
     "voda_cash":"Vodafone Cash",
     "total_price":"Total Price",
-    "confirm_pay":"Pay Now"
+    "confirm_pay":"Pay Now",
+    "back_to_home_page":"Back to home page",
+    "download_the_ticket":"Download the ticket",
+    "notifications":"Notifications"
 }
