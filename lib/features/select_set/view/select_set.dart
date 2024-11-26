@@ -59,7 +59,7 @@ class _SelectSetState extends State<SelectSet> {
                   ),
                 ],
               ),
-              BusSeatBookingScreen()
+              const BusSeatBookingScreen()
             ],
           ),
         ),

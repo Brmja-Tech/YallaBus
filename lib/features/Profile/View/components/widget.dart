@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileTextField extends StatelessWidget {
-  ProfileTextField({
+  const ProfileTextField({
     super.key,
     required this.hintText,
     required this.textEditingController,
@@ -16,7 +16,7 @@ class ProfileTextField extends StatelessWidget {
   final TextEditingController textEditingController;
   final dynamic prefix;
   final dynamic suffix;
-  bool isReadOnly;
+  final bool isReadOnly;
   final bool obscureText;
 
   @override

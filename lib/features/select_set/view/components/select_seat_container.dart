@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BusSeatBookingScreen extends StatefulWidget {
+  const BusSeatBookingScreen({super.key});
+
   @override
-  _BusSeatBookingScreenState createState() => _BusSeatBookingScreenState();
+  BusSeatBookingScreenState createState() => BusSeatBookingScreenState();
 }
 
-class _BusSeatBookingScreenState extends State<BusSeatBookingScreen> {
+class BusSeatBookingScreenState extends State<BusSeatBookingScreen> {
   // Mock seat data
   final int rows = 9;
   final List<String> columns = ['A', 'B', 'D', 'E'];

@@ -36,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  Gap(180),
+                  const Gap(180),
                   Container(
                     width: w * 0.3,
                     height: w * 0.3,

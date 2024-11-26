@@ -13,7 +13,6 @@ class PaimentSucces extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CustomAppBar(text: 'payment_status'.tr()),
