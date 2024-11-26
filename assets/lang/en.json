@@ -9,5 +9,15 @@
     "dont_have_account":"Don't have an account?",
     "join_yalaBus_now":"Join YalaBus Team",
     "welcome_back":"Welcome Back",
-    "login_now":"Login Now"
+    "login_now":"Login Now",
+    "password_confirmtion":"Password Confirmtion",
+    "phone":"Phone",
+    "sign_up":"Sign Up",
+    "already_have_account":"Already have an account?",
+    "register":"Register",
+    "register_through":"Register through",
+    "select_set":"Select Set",
+    "reserved":"Reserved",
+    "your_seat":"Your Seat",
+    "available":"Available"
 }

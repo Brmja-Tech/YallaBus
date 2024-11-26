@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
 
 import '../../../core/statefull/login_button.dart';
+import '../../../core/statefull/social_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -20,92 +22,111 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/background.png'),
-                fit: BoxFit.cover,
-              ),
+        child: Container(
+          height: h,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/background.png'),
+              fit: BoxFit.cover,
             ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50.r),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50.r),
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Gap(150.h),
+                  Image.asset(
+                    'assets/images/logo.png',
+                    width: w * 0.6,
+                  ),
+                  Gap(20.h),
                   Customtextfield(
-                    hintText: 'username',
+                    hintText: 'name'.tr(),
                     textEditingController: userNameController,
+                    prefix: const Icon(Icons.person),
                   ),
                   Gap(20.h),
                   Customtextfield(
-                    hintText: 'email',
+                    hintText: 'email'.tr(),
                     textEditingController: emailController,
+                    prefix: const Icon(Icons.email),
                   ),
                   Gap(20.h),
                   Customtextfield(
-                    hintText: 'phone',
+                    hintText: 'phone'.tr(),
                     textEditingController: phoneController,
+                    prefix: const Icon(Icons.phone),
                   ),
                   Gap(20.h),
                   Customtextfield(
-                    hintText: 'password',
+                    hintText: 'password'.tr(),
                     textEditingController: passwordController,
-                    prefix: const Icon(Icons.visibility),
+                    suffix: const Icon(Icons.visibility),
+                    prefix: const Icon(Icons.lock),
                   ),
                   Gap(20.h),
                   Customtextfield(
-                    hintText: 'password confirmtion',
+                    hintText: 'password_confirmtion'.tr(),
                     textEditingController: passwordConfirmController,
-                    prefix: const Icon(
+                    suffix: const Icon(
                       Icons.visibility,
+                      color: Colors.black,
+                    ),
+                    prefix: const Icon(
+                      Icons.lock,
                       color: Colors.black,
                     ),
                   ),
                   Gap(30.h),
-                  const CustomLoginButton(),
+                  CustomLoginButton(
+                    text: 'login'.tr(),
+                  ),
                   Gap(30.h),
-                  const Row(
+                  Row(
                     children: [
                       // Left line
-                      Expanded(
+                      const Expanded(
                         child: Divider(
-                          color: Colors.black, // Color of the line
+                          color: Colors.white, // Color of the line
                           thickness: 1, // Thickness of the line
                           endIndent: 8, // Spacing before the text
                         ),
                       ),
                       // Text in the middle
                       Text(
-                        'Register through', // Arabic text
-                        style: TextStyle(
-                          color: Colors.black, // Text color
+                        'register_through'.tr(), // Arabic text
+                        style: const TextStyle(
+                          color: Colors.white, // Text color
                           fontSize: 16, // Text size
                         ),
                       ),
                       // Right line
-                      Expanded(
+                      const Expanded(
                         child: Divider(
-                          color: Colors.black, // Color of the line
+                          color: Colors.white, // Color of the line
                           thickness: 1, // Thickness of the line
                           indent: 8, // Spacing after the text
                         ),
                       ),
                     ],
                   ),
+                  Gap(20.h),
+                  const SocialAuth(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Already have an account?',
-                        style: TextStyle(color: Colors.black),
+                      Text(
+                        'already_have_account'.tr(),
+                        style: const TextStyle(color: Colors.white),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: const Text('Login'),
+                        child: Text('login'.tr()),
                       ),
                     ],
                   ),
