@@ -137,71 +137,99 @@ class _HomescreenState extends State<Homescreen> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Column(
+                                child: Row(
                                   children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showModalBottomSheet(
-                                          elevation: 2,
-                                          context: context,
-                                          builder: (context) {
-                                            return ListView.builder(
-                                              shrinkWrap: true,
-                                              itemCount: citys.length,
-                                              itemBuilder: (context, index) {
-                                                return ListTile(
-                                                  onTap: () {
-                                                    setState(() {
-                                                      city1 = citys[index];
-                                                    });
-                                                    Navigator.pop(context);
-                                                  },
-                                                  title: Text(citys[index]),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        );
-                                      },
-                                      child: _buildLocationRow(
-                                        icon: Icons.flight_takeoff,
-                                        text: city1 ?? 'start_point'.tr(),
-                                        w: w,
+                                    Expanded(
+                                      child: Column(
+                                        children: [
+                                          InkWell(
+                                            onTap: () {
+                                              showModalBottomSheet(
+                                                elevation: 2,
+                                                context: context,
+                                                builder: (context) {
+                                                  return ListView.builder(
+                                                    shrinkWrap: true,
+                                                    itemCount: citys.length,
+                                                    itemBuilder:
+                                                        (context, index) {
+                                                      return ListTile(
+                                                        onTap: () {
+                                                          setState(() {
+                                                            city1 =
+                                                                citys[index];
+                                                          });
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        title:
+                                                            Text(citys[index]),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: _buildLocationRow(
+                                              icon: Icons.flight_takeoff,
+                                              text: city1 ?? 'start_point'.tr(),
+                                              w: w,
+                                            ),
+                                          ),
+                                          const Divider(
+                                            color: Colors.black12,
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              showModalBottomSheet(
+                                                elevation: 2,
+                                                context: context,
+                                                builder: (context) {
+                                                  return ListView.builder(
+                                                    shrinkWrap: true,
+                                                    itemCount: citys.length,
+                                                    itemBuilder:
+                                                        (context, index) {
+                                                      return ListTile(
+                                                        onTap: () {
+                                                          setState(() {
+                                                            city2 =
+                                                                citys[index];
+                                                          });
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        title:
+                                                            Text(citys[index]),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: _buildLocationRow(
+                                              icon: Icons.flight_land,
+                                              text: city2 ?? 'end_point'.tr(),
+                                              w: w,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    const Divider(
-                                      color: Colors.black12,
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        showModalBottomSheet(
-                                          elevation: 2,
-                                          context: context,
-                                          builder: (context) {
-                                            return ListView.builder(
-                                              shrinkWrap: true,
-                                              itemCount: citys.length,
-                                              itemBuilder: (context, index) {
-                                                return ListTile(
-                                                  onTap: () {
-                                                    setState(() {
-                                                      city2 = citys[index];
-                                                    });
-                                                    Navigator.pop(context);
-                                                  },
-                                                  title: Text(citys[index]),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        );
+                                    IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          String temp = city1 ?? '';
+                                          city1 = city2 ?? '';
+                                          city2 = temp;
+                                        });
                                       },
-                                      child: _buildLocationRow(
-                                        icon: Icons.flight_land,
-                                        text: city2 ?? 'end_point'.tr(),
-                                        w: w,
+                                      icon: Icon(
+                                        Icons.swap_vert_circle,
+                                        color: AppColors.primaryColor,
+                                        size: 42,
                                       ),
-                                    ),
+                                    )
                                   ],
                                 ),
                               ),
@@ -402,8 +430,6 @@ class _HomescreenState extends State<Homescreen> {
           text,
           style: const TextStyle(fontSize: 16),
         ),
-        Spacer(),
-        Icon(Icons.swap_vert, color: AppColors.primaryColor),
       ],
     );
   }
