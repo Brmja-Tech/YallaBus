@@ -19,5 +19,18 @@
     "select_set":"Select Set",
     "reserved":"Reserved",
     "your_seat":"Your Seat",
-    "available":"Available"
+    "available":"Available",
+    "Book_my_ticket":"Book My Ticket",
+    "seat_number":"Seat Number",
+    "booking_code":"Booking Code",
+    "bus_category":"Bus Category",
+    "full_name":"Full Name",
+    "continue_to_reservation":"Continue To Reservation",
+    "payment_status":"Payment Status",
+    "invoice_number":"Invoice Number",
+    "date":"Date",
+    "time":"Time",
+    "amount_paid":"Amount Paid",
+    "payment_method":"Payment Method"
+    
 }
