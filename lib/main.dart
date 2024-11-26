@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
 import 'package:sama_bus/features/Auth/view/login_screen.dart';
+import 'package:sama_bus/features/home/view/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             theme: LightTheme.theme,
-            home:  LoginScreen(),
+            home: const Homescreen(),
           );
         });
   }

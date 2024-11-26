@@ -24,20 +24,29 @@ mixin LightTheme on ThemeData {
         bodyLarge: const TextStyle(
             color: Colors.black, fontSize: 16, fontFamily: 'Poppins'),
         bodyMedium: TextStyle(
-          color: AppColors.secondaryColor.withOpacity(0.8),
+          color: AppColors.textColor.withOpacity(0.8),
           fontFamily: 'Poppins',
-          fontSize: 14,
+          fontSize: 16,
         ),
         headlineSmall: const TextStyle(
-          color: AppColors.secondaryColor,
+          color: AppColors.textColor,
           fontWeight: FontWeight.bold,
           fontFamily: 'Poppins',
-          fontSize: 12,
+          fontSize: 14,
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: AppColors.gestureColor,
         foregroundColor: Colors.white,
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+          elevation: WidgetStateProperty.all(5),
+          // fixedSize: WidgetStateProperty.all(Size(w * 0.8, h * 0.06)),
+          backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+        ),
       ),
       buttonTheme: ButtonThemeData(
         buttonColor: AppColors.primaryColor,
