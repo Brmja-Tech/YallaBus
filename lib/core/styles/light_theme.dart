@@ -9,26 +9,27 @@ mixin LightTheme on ThemeData {
       brightness: Brightness.light,
       primaryColor: AppColors.primaryColor,
       scaffoldBackgroundColor: Colors.white,
-      appBarTheme: AppBarTheme(
-        color: AppColors.primaryColor,
+      appBarTheme: const AppBarTheme(
+        
+        color: AppColors.secondaryColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: AppColors.secondaryColor),
+        iconTheme: IconThemeData(color: Colors.black),
         titleTextStyle: TextStyle(
-          color: AppColors.primaryColor,
+          color: Colors.black,
           fontFamily: 'Poppins',
           fontSize: 20,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w600,
         ),
       ),
-      textTheme: TextTheme(
-        bodyLarge: const TextStyle(
-            color: Colors.black, fontSize: 16, fontFamily: 'Poppins'),
+      textTheme: const TextTheme(
+        bodyLarge:
+            TextStyle(color: Colors.black, fontSize: 16, fontFamily: 'Poppins'),
         bodyMedium: TextStyle(
-          color: AppColors.secondaryColor.withOpacity(0.8),
+          color: Colors.black,
           fontFamily: 'Poppins',
-          fontSize: 14,
+          fontSize: 16,
         ),
-        headlineSmall: const TextStyle(
+        headlineSmall: TextStyle(
           color: AppColors.secondaryColor,
           fontWeight: FontWeight.bold,
           fontFamily: 'Poppins',

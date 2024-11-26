@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../styles/app_colors.dart';
 
 class CustomLoginButton extends StatelessWidget {
-  const CustomLoginButton({super.key});
+  const CustomLoginButton({super.key, required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CustomLoginButton extends StatelessWidget {
         color: AppColors.primaryColor,
         borderRadius: BorderRadius.circular(10.r),
       ),
-      child: const Center(child: Text('Login')),
+      child:  Center(child: Text(text)),
     );
   }
 }
