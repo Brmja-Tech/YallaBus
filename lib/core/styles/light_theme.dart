@@ -10,7 +10,6 @@ mixin LightTheme on ThemeData {
       primaryColor: AppColors.primaryColor,
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: const AppBarTheme(
-        
         color: AppColors.secondaryColor,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
@@ -25,20 +24,29 @@ mixin LightTheme on ThemeData {
         bodyLarge:
             TextStyle(color: Colors.black, fontSize: 16, fontFamily: 'Poppins'),
         bodyMedium: TextStyle(
-          color: Colors.black,
+          color: AppColors.textColor,
           fontFamily: 'Poppins',
           fontSize: 16,
         ),
         headlineSmall: TextStyle(
-          color: AppColors.secondaryColor,
+          color: AppColors.textColor,
           fontWeight: FontWeight.bold,
           fontFamily: 'Poppins',
-          fontSize: 12,
+          fontSize: 14,
         ),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: AppColors.gestureColor,
         foregroundColor: Colors.white,
+      ),
+      filledButtonTheme: FilledButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+          elevation: WidgetStateProperty.all(5),
+          // fixedSize: WidgetStateProperty.all(Size(w * 0.8, h * 0.06)),
+          backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+        ),
       ),
       buttonTheme: ButtonThemeData(
         buttonColor: AppColors.primaryColor,
