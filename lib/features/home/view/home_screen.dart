@@ -34,6 +34,30 @@ class _HomescreenState extends State<Homescreen> {
     final h = MediaQuery.of(context).size.height;
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.primaryColor,
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: w * 0.03),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.brown,
+                radius: 22,
+                child: Text(
+                  'M',
+                  style: TextStyle(fontSize: 22),
+                ),
+              ),
+              Icon(
+                Icons.notifications_none,
+                size: 32,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Container(
         width: w,
         decoration: const BoxDecoration(
@@ -47,29 +71,7 @@ class _HomescreenState extends State<Homescreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Gap(h * 0.01),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: w * 0.03),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.brown,
-                        radius: 22,
-                        child: Text(
-                          'M',
-                          style: TextStyle(fontSize: 22),
-                        ),
-                      ),
-                      Icon(
-                        Icons.notifications_none,
-                        size: 32,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
-                Gap(h * 0.08),
+                Gap(h * 0.09),
                 Container(
                   width: w * 0.7,
                   decoration: BoxDecoration(
