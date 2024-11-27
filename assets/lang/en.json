@@ -66,5 +66,18 @@
     "terms_and_conditions":"Terms and Conditions",
     "settings":"Settings",
     "log_out":"Log Out",
-    "price":"Price:"
+    "price":"Price:",
+    "vehicle_num":"Vehicle Number",
+    "orders":"Orders",
+    "reject":"Reject",
+    "accept":"Accept",
+    "my_orders":"My Orders",
+    "details":"Details",
+    "services":"Services",
+    "trips_on_your_comp":"Trips on your compony",
+    "your_drivers":"Your Drivers",
+    "completed_orders":"Completed Orders",
+    "current_orders":"Current Orders"
+
+    
 }
