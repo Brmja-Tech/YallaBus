@@ -15,7 +15,7 @@ class Notifications extends StatelessWidget {
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (context, index) {
-            return NotificationItemContainer();
+            return const  NotificationItemContainer();
           },
         )));
   }

@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_app_bar.dart';
 
-import '../../core/statefull/custom_Button.dart';
+import '../../core/statefull/custom_button.dart';
 import '../../core/styles/app_colors.dart';
 
 class PaimentSucces extends StatelessWidget {

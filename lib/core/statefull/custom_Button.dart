@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../styles/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.text});
@@ -13,9 +12,10 @@ class CustomButton extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: Container(
         width: double.infinity,
-        height: 0.08 * h,
+        height: 0.06 * h,
         decoration: BoxDecoration(
-          color: AppColors.primaryColor,
+          // ignore: prefer_const_constructors
+          color: Color(0XFF1C26E4),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(

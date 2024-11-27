@@ -41,5 +41,19 @@
     "confirm_pay":"Pay Now",
     "back_to_home_page":"Back to home page",
     "download_the_ticket":"Download the ticket",
-    "notifications":"Notifications"
+    "notifications":"Notifications",
+    "welcome_to_yalaBus":"Welcome to YalaBus!",
+    "back_to_login_page":"Back to login",
+    "Join_us_as_a_service_provider":"Join us as a service provider",
+    "are_you_already_a_member_of_yalaBus?":"Are you already a member of YalaBus?",
+    "continue":"Continue",
+    "attach_the_following_documents:":"Attach the following documents:",
+    "car_number":"Car Number",
+    "attach_vehicle_documents":"Attach vehicle documents (licenses)",
+    "the_file_size_must_not_exceed_24_MB":"The file size must not exceed 24 MB.",
+    "join_us_as_a_driver":"Join us as a driver",
+    "attach_company_documents_commercial_register":"Attach company documents (commercial register)",
+    "submit_documents":"Submit documents"
+    
+
 }

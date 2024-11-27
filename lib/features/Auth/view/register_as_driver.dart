@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,15 +6,15 @@ import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
 
 import '../../../core/statefull/login_button.dart';
-import '../../../core/statefull/social_auth.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class RegisterAsDriverScreen extends StatefulWidget {
+  const RegisterAsDriverScreen({super.key});
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<RegisterAsDriverScreen> createState() =>
+      _RegisterAsDriverScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _RegisterAsDriverScreenState extends State<RegisterAsDriverScreen> {
   TextEditingController userNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
@@ -84,51 +85,48 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   Gap(30.h),
                   CustomLoginButton(
-                    text: 'register'.tr(),
+                    text: 'continue'.tr(),
                   ),
                   Gap(30.h),
                   Row(
-                    children: [
-                      // Left line
-                      const Expanded(
-                        child: Divider(
-                          color: Colors.white, // Color of the line
-                          thickness: 1, // Thickness of the line
-                          endIndent: 8, // Spacing before the text
-                        ),
-                      ),
-                      // Text in the middle
-                      Text(
-                        'register_through'.tr(), // Arabic text
-                        style: const TextStyle(
-                          color: Colors.white, // Text color
-                          fontSize: 16, // Text size
-                        ),
-                      ),
-                      // Right line
-                      const Expanded(
-                        child: Divider(
-                          color: Colors.white, // Color of the line
-                          thickness: 1, // Thickness of the line
-                          indent: 8, // Spacing after the text
-                        ),
-                      ),
-                    ],
-                  ),
-                  Gap(20.h),
-                  const SocialAuth(),
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'already_have_account'.tr(),
-                        style: const TextStyle(color: Colors.white),
+                      SizedBox(
+                        width: 0.5 * w,
+                        child: AutoSizeText(
+                          'are_you_already_a_member_of_yalaBus?'.tr(),
+                          maxFontSize: 10,
+                          minFontSize: 5,
+                          style: const TextStyle(color: Colors.white),
+                        ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text('login'.tr()),
+                        child: Text('login'.tr(),
+                            style: const TextStyle(color: Color(0xff1C26E4))),
                       ),
                     ],
+                  ),
+                  Gap(10.h),
+                  InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white10,
+                        border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      width: w * 0.6,
+                      height: h * 0.05,
+                      child: Center(
+                        child: AutoSizeText(
+                          'Join_us_as_a_service_provider'.tr(),
+                          maxFontSize: 15,
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

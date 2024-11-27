@@ -2,11 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
-import 'package:sama_bus/features/Auth/view/login_screen.dart';
+import 'package:sama_bus/features/Auth/view/attach_document_as_provider.dart';
+import 'package:sama_bus/features/Auth/view/login_as_provider.dart';
 
-import 'features/notifications/notifications.dart';
-import 'features/paiment_succes/paiment_succes.dart';
-import 'features/select_set/view/select_set.dart';
+import 'features/Auth/view/register_as_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +44,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             theme: LightTheme.theme,
-            home:  SelectSet(),
+            home: const  AttachDocumentAsProvider(),
           );
         });
   }
