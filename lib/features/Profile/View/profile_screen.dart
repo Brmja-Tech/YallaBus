@@ -21,20 +21,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: AppBar(
-          backgroundColor: AppColors.primaryColor,
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: AppColors.primaryColor,
+        // ),
         body: SingleChildScrollView(
-          child: Container(
-            width: w,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.topCenter,
-                    image: AssetImage('assets/images/seconedBackground.png'))),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+          child: Stack(
+            children: [
+              Image.asset(
+                'assets/images/seconedBackground.png',
+                fit: BoxFit.contain,
+              ),
+              const Positioned(
+                top: 30,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Gap(20),
+                    Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+              Column(
                 children: [
                   const Gap(100),
                   Container(
@@ -105,7 +115,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Text(isReadOnly ? 'change'.tr() : 'save'.tr()))
                 ],
               ),
-            ),
+            ],
           ),
         ));
   }

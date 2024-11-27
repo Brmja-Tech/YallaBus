@@ -2,9 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
-import 'package:sama_bus/features/More/view/more.dart';
-import 'package:sama_bus/features/Profile/View/profile_screen.dart';
-import 'package:sama_bus/features/request_bus/view/request_bus_screen.dart';
+import 'package:sama_bus/features/driver_orders/view/driver_orders.dart';
+import 'package:sama_bus/features/driver_profile/view/driver_profile.dart';
+import 'package:sama_bus/features/provider_home_page/view/provider_home_screen.dart';
+import 'package:sama_bus/features/provider_trips/view/provider_trips.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(440, 956), 
+        designSize: const Size(440, 956),
         minTextAdapt: true,
         splitScreenMode: true,
         // Use builder only if you need to use library outside ScreenUtilInit context
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             theme: LightTheme.theme,
-            home: const ProfileScreen(),
+            home: const ProviderTripsScreen(),
           );
         });
   }
