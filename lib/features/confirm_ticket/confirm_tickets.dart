@@ -6,6 +6,10 @@ import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_app_bar.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
 
+import '../select_payment/view/select_payment_screen.dart';
+
+
+
 class ConfirmTickets extends StatefulWidget {
   const ConfirmTickets({super.key});
 
@@ -22,18 +26,26 @@ class _ConfirmTicketsState extends State<ConfirmTickets> {
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Container(
-          width: double.infinity,
-          height: 0.08 * h,
-          decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            borderRadius: BorderRadius.circular(10),
+        child: GestureDetector(
+          onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SelectPaymentScreen()),
+            );
+          },
+          child: Container(
+            width: double.infinity,
+            height: 0.08 * h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+                child: Text(
+              'continue_to_reservation'.tr(),
+              style:const TextStyle(color: Colors.white),
+            )),
           ),
-          child: Center(
-              child: Text(
-            'continue_to_reservation'.tr(),
-            style:const TextStyle(color: Colors.white),
-          )),
         ),
       ),
       appBar: CustomAppBar(text: 'Book_my_ticket'.tr()),
@@ -108,8 +120,8 @@ class _ConfirmTicketsState extends State<ConfirmTickets> {
                                 child: Icon(
                                   Icons.directions_bus,
                                   color: AppColors.primaryColor,
-                                  size: 32,
-                                ),
+                                         size: 32,
+                         ),
                               ), // Spae for the icon
                               SizedBox(
                                 width: 0.1 * w,

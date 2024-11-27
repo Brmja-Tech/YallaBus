@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:sama_bus/features/driver_profile/view/driver_profile.dart';
+
+import '../../../core/routers/driver_navbar.dart';
 
 class DataConfirmed extends StatelessWidget {
   const DataConfirmed({super.key});
@@ -45,6 +48,14 @@ class DataConfirmed extends StatelessWidget {
                   style: TextStyle(color: Colors.white)),
               Gap(h * 0.2),
               InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const DriverBottomNavigationBar()),
+                  );
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white10,

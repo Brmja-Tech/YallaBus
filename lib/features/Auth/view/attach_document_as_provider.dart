@@ -3,6 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:sama_bus/core/routers/provider_navbar.dart';
+import 'package:sama_bus/features/Auth/view/data_confirmed.dart';
 
 class AttachDocumentAsProvider extends StatefulWidget {
   const AttachDocumentAsProvider({super.key});
@@ -208,18 +210,28 @@ class _AttachDocumentAsProviderState extends State<AttachDocumentAsProvider> {
                     ),
                   ),
                   Gap(0.04 * h),
-                  Container(
-                    width: double.infinity,
-                    height: 0.06 * h,
-                    decoration: BoxDecoration(
-                      color: const Color(0XFF1C26E4),
-                      borderRadius: BorderRadius.circular(10),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ProviderBottomNavigationBar()),
+                      );
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 0.06 * h,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFF1C26E4),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                          child: Text(
+                        'submit_documents'.tr(),
+                        style: const TextStyle(color: Colors.white),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      'submit_documents'.tr(),
-                      style: const TextStyle(color: Colors.white),
-                    )),
                   ),
                   Gap(0.02 * h)
                 ],

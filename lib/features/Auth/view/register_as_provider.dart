@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
+import 'package:sama_bus/features/Auth/view/attach_document_as_provider.dart';
+import 'package:sama_bus/features/Auth/view/login_as_provider.dart';
+import 'package:sama_bus/features/Auth/view/register_as_driver.dart';
 
 import '../../../core/statefull/login_button.dart';
 
@@ -84,8 +87,17 @@ class _RegisterAsProviderScreenState extends State<RegisterAsProviderScreen> {
                     ),
                   ),
                   Gap(30.h),
-                  CustomLoginButton(
-                    text: 'continue'.tr(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AttachDocumentAsProvider()),
+                      );
+                    },
+                    child: CustomLoginButton(
+                      text: 'continue'.tr(),
+                    ),
                   ),
                   Gap(30.h),
                   Row(
@@ -101,7 +113,13 @@ class _RegisterAsProviderScreenState extends State<RegisterAsProviderScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginAsProvider()),
+                          );
+                        },
                         child: Text('login'.tr(),
                             style: const TextStyle(color: Color(0xff1C26E4))),
                       ),
@@ -109,6 +127,13 @@ class _RegisterAsProviderScreenState extends State<RegisterAsProviderScreen> {
                   ),
                   Gap(10.h),
                   InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterAsDriverScreen()),
+                      );
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white10,

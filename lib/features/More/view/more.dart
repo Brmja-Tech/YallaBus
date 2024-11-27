@@ -3,6 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
+import 'package:sama_bus/features/Auth/view/login_screen.dart';
+import 'package:sama_bus/features/Profile/View/profile_screen.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -25,7 +27,7 @@ class MoreScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Gap(100),
+                Gap(0.1 * h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
@@ -46,9 +48,18 @@ class MoreScreen extends StatelessWidget {
                       fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 Gap(h * 0.01),
-                CustomProfileButton(
-                  text: 'profile'.tr(),
-                  icon: Icons.person_2_outlined,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileScreen()),
+                    );
+                  },
+                  child: CustomProfileButton(
+                    text: 'profile'.tr(),
+                    icon: Icons.person_2_outlined,
+                  ),
                 ),
                 Gap(h * 0.01),
                 CustomProfileButton(
@@ -80,35 +91,44 @@ class MoreScreen extends StatelessWidget {
                 Gap(h * 0.01),
                 const Divider(),
                 Gap(h * 0.01),
-                Container(
-                  width: w,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.red)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.logout,
-                          color: Colors.red,
-                        ),
-                        const Text(
-                          style: TextStyle(color: Colors.red, fontSize: 24),
-                          ' | ',
-                        ),
-                        AutoSizeText(
-                          style: const TextStyle(color: Colors.red),
-                          'log_out'.tr(),
-                          maxFontSize: 18,
-                          minFontSize: 12,
-                        ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.red,
-                        )
-                      ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
+                  child: Container(
+                    width: w,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.red)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.logout,
+                            color: Colors.red,
+                          ),
+                          const Text(
+                            style: TextStyle(color: Colors.red, fontSize: 24),
+                            ' | ',
+                          ),
+                          AutoSizeText(
+                            style: const TextStyle(color: Colors.red),
+                            'log_out'.tr(),
+                            maxFontSize: 18,
+                            minFontSize: 12,
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.red,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

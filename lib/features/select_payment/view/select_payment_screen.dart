@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_app_bar.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
 import 'package:sama_bus/features/select_payment/view/components/tickets_container.dart';
+import '../../paiment_succes/paiment_succes.dart';
 
 class SelectPaymentScreen extends StatelessWidget {
   const SelectPaymentScreen({super.key});
@@ -121,7 +122,12 @@ class SelectPaymentScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  FilledButton(onPressed: () {}, child: Text('pay'.tr()))
+                  FilledButton(onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PaimentSucces()),
+                    );
+                  }, child: Text('pay'.tr()))
                 ],
               ),
             ),

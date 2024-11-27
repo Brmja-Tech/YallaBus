@@ -22,19 +22,6 @@ class DriverProfileScreen extends StatelessWidget {
             'assets/images/seconedBackground.png',
             fit: BoxFit.contain,
           ),
-          const Positioned(
-            top: 30,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Gap(20),
-                Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                ),
-              ],
-            ),
-          ),
           SizedBox(
             width: w,
             child: Padding(
@@ -147,4 +134,3 @@ class DriverProfileScreen extends StatelessWidget {
     );
   }
 }
-

@@ -6,6 +6,7 @@ import 'package:sama_bus/core/statefull/custom_text_field.dart';
 
 import '../../../core/statefull/login_button.dart';
 import '../../../core/statefull/social_auth.dart';
+import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -83,8 +84,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   Gap(30.h),
-                  CustomLoginButton(
-                    text: 'register'.tr(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: CustomLoginButton(
+                      text: 'register'.tr(),
+                    ),
                   ),
                   Gap(30.h),
                   Row(
@@ -125,7 +135,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         style: const TextStyle(color: Colors.white),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()),
+                            (Route<dynamic> route) => false,
+                          );
+                        },
                         child: Text('login'.tr()),
                       ),
                     ],

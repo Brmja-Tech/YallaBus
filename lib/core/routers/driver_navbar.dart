@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
 import 'package:sama_bus/features/More/view/more.dart';
+import 'package:sama_bus/features/driver_orders/view/driver_orders.dart';
+import 'package:sama_bus/features/driver_profile/view/driver_profile.dart';
 import 'package:sama_bus/features/get_all_tickets/view/get_all_tickets.dart';
 
 import '../../features/home/view/home_screen.dart';
 
-class BottomNavigationBarExample extends StatefulWidget {
-  const BottomNavigationBarExample({super.key});
+class DriverBottomNavigationBar extends StatefulWidget {
+  const DriverBottomNavigationBar({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() =>
-      _BottomNavigationBarExampleState();
+  State<DriverBottomNavigationBar> createState() =>
+      _DriverBottomNavigationBarState();
 }
 
-class _BottomNavigationBarExampleState
-    extends State<BottomNavigationBarExample> {
+class _DriverBottomNavigationBarState extends State<DriverBottomNavigationBar> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Homescreen(),
-    GetAllTickets(),
+    DriverProfileScreen(),
+    DriverOrdersScreen(),
     MoreScreen()
   ];
 
