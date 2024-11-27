@@ -22,7 +22,6 @@ dependencies:
   flutter_svg: ^2.0.15
   gap: ^3.0.1
   pretty_dio_logger: ^1.4.0
-  auto_size_text: ^3.0.0
   file_picker: ^8.1.4
 
 dev_dependencies:
