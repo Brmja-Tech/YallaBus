@@ -59,7 +59,11 @@ class _SelectSetState extends State<SelectSet> {
                   ),
                 ],
               ),
-              const BusSeatBookingScreen()
+              SizedBox(
+                height: 0.8 * MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const  BusSeatBookingScreen(),
+              )
             ],
           ),
         ),

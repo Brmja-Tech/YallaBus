@@ -2,9 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
-import 'package:sama_bus/features/More/view/more.dart';
-import 'package:sama_bus/features/Profile/View/profile_screen.dart';
-import 'package:sama_bus/features/request_bus/view/request_bus_screen.dart';
+import 'package:sama_bus/features/Auth/view/attach_document_as_provider.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: context.supportedLocales,
             locale: context.locale,
             theme: LightTheme.theme,
-            home: const ProfileScreen(),
+            home: const  AttachDocumentAsProvider(),
           );
         });
   }
