@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
 
+import '../../available_tickets/view/available_tickets.dart';
+import '../../request_bus/view/request_bus_screen.dart';
+
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
 
@@ -101,7 +104,10 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         Gap(h * 0.01),
                         FilledButton(
-                          onPressed: () {},
+                          onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RequestBusScreen()),
+                          );},
                           style: ButtonStyle(
                             fixedSize: WidgetStateProperty.all(
                               Size(w * 0.6, h * 0.04),
@@ -395,22 +401,31 @@ class _HomescreenState extends State<Homescreen> {
                             w: w,
                           ),
                         ),
+                        Gap(h * 0.02),
+                        Center(
+                          child: FilledButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const AvailableTeckits()),
+                                );
+                              },
+                              style: ButtonStyle(
+                                fixedSize: WidgetStateProperty.all(
+                                  Size(w * 0.8, h * 0.04),
+                                ),
+                              ),
+                              child: Text(
+                                'see_available'.tr(),
+                              )),
+                        ),
+                        Gap(h * 0.01)
                       ],
                     ),
                   ),
                 ),
                 Gap(h * 0.02),
-                FilledButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      fixedSize: WidgetStateProperty.all(
-                        Size(w * 0.8, h * 0.04),
-                      ),
-                    ),
-                    child: Text(
-                      'see_available'.tr(),
-                    )),
-                Gap(h * 0.02)
+
               ],
             ),
           ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
-
+import '../../confirm_ticket/confirm_tickets.dart';
 import 'components/tickets_container.dart';
 
 class AvailableTeckits extends StatefulWidget {
@@ -97,10 +97,17 @@ class _AvailableTeckitsState extends State<AvailableTeckits> {
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  return const Column(
+                  return  Column(
                     children: [
-                      TicketsContainer(),
-                      Gap(10),
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const ConfirmTickets()),
+                            );
+                          },
+                          child: const TicketsContainer()),
+                      const Gap(10),
                     ],
                   );
                 },

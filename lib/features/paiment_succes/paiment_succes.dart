@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_app_bar.dart';
+import 'package:sama_bus/features/home/view/home_screen.dart';
 
 import '../../core/statefull/custom_button.dart';
 import '../../core/styles/app_colors.dart';
@@ -16,8 +17,31 @@ class PaimentSucces extends StatelessWidget {
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
-      bottomNavigationBar: CustomButton(
-        text: 'back_to_home_page'.tr(),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const Homescreen()
+              ),
+                (Route<dynamic> route) => false,
+            );
+          },
+          child: Container(
+            width: double.infinity,
+            height: 0.08 * h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+                child: Text(
+              'continue_to_reservation'.tr(),
+              style: const TextStyle(color: Colors.white),
+            )),
+          ),
+        ),
       ),
       appBar: CustomAppBar(text: 'payment_status'.tr()),
       body: SafeArea(
