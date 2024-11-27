@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sama_bus/core/styles/light_theme.dart';
 import 'package:sama_bus/features/Auth/view/attach_document_as_provider.dart';
-import 'package:sama_bus/features/Auth/view/login_as_provider.dart';
 
-import 'features/Auth/view/register_as_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
