@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
+import 'package:sama_bus/features/Auth/view/data_confirmed.dart';
 
 class AttachDocumentAsDriver extends StatefulWidget {
   const AttachDocumentAsDriver({super.key});
@@ -162,18 +163,27 @@ class _AttachDocumentAsDriverState extends State<AttachDocumentAsDriver> {
                       ),
                     ),
                     Gap(0.04 * h),
-                    Container(
-                      width: double.infinity,
-                      height: 0.06 * h,
-                      decoration: BoxDecoration(
-                        color: const Color(0XFF1C26E4),
-                        borderRadius: BorderRadius.circular(10),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DataConfirmed()),
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 0.06 * h,
+                        decoration: BoxDecoration(
+                          color: const Color(0XFF1C26E4),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                            child: Text(
+                          'submit_documents'.tr(),
+                          style: const TextStyle(color: Colors.white),
+                        )),
                       ),
-                      child:  Center(
-                          child: Text(
-                        'submit_documents'.tr(),
-                        style: const TextStyle(color: Colors.white),
-                      )),
                     ),
                   ],
                 ),

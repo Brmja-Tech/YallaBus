@@ -3,8 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:sama_bus/core/routers/driver_navbar.dart';
 import 'package:sama_bus/core/statefull/custom_text_field.dart';
-
 
 class LoginAsDriverScreen extends StatelessWidget {
   LoginAsDriverScreen({super.key});
@@ -72,7 +72,14 @@ class LoginAsDriverScreen extends StatelessWidget {
                     Gap(h * 0.02),
                     Gap(h * 0.02),
                     FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DriverBottomNavigationBar()),
+                        );
+                      },
                       style: ButtonStyle(
                         fixedSize:
                             WidgetStateProperty.all(Size(w * 0.8, h * 0.06)),
@@ -101,7 +108,7 @@ class LoginAsDriverScreen extends StatelessWidget {
                           child: AutoSizeText(
                             'Join_us_as_a_service_provider'.tr(),
                             maxFontSize: 15,
-                            style:const  TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                             ),
                           ),

@@ -43,72 +43,59 @@ class _DriverOrdersScreenState extends State<DriverOrdersScreen> {
     final h = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          Image.asset(
-            'assets/images/seconedBackground.png',
-            fit: BoxFit.contain,
-          ),
-          const Positioned(
-            top: 30,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Gap(20),
-                Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Stack(
+          alignment: Alignment.topLeft,
+          children: [
+            Image.asset(
+              'assets/images/seconedBackground.png',
+              fit: BoxFit.contain,
             ),
-          ),
-          SizedBox(
-            width: w,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: w * 0.09),
-              child: Column(
-                children: [
-                  const Gap(120),
-                  Text(
-                    'my_orders'.tr(),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+            SizedBox(
+              width: w,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: w * 0.09),
+                child: Column(
+                  children: [
+                    const Gap(120),
+                    Text(
+                      'my_orders'.tr(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  // Display current page name
+                    // Display current page name
 
-                  Gap(h * 0.02),
-                  // Page selection buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(
-                      pageNames.length,
-                      (index) => TextButton(
-                        onPressed: () => _changePage(index),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: index == currentPage
-                                  ? Border(
-                                      bottom: BorderSide(
-                                          color: AppColors.primaryColor,
-                                          width: 2))
-                                  : null),
-                          child: Text(
-                            pageNames[index],
-                            style: TextStyle(
-                                color: index == currentPage
-                                    ? AppColors.primaryColor
-                                    : Colors.black54),
+                    Gap(h * 0.02),
+                    // Page selection buttons
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(
+                        pageNames.length,
+                        (index) => TextButton(
+                          onPressed: () => _changePage(index),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: index == currentPage
+                                    ? Border(
+                                        bottom: BorderSide(
+                                            color: AppColors.primaryColor,
+                                            width: 2))
+                                    : null),
+                            child: Text(
+                              pageNames[index],
+                              style: TextStyle(
+                                  color: index == currentPage
+                                      ? AppColors.primaryColor
+                                      : Colors.black54),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  SingleChildScrollView(
-                    child: SizedBox(
+                    SizedBox(
                       height: h * 0.7,
                       child: PageView.builder(
                         controller: _pageController,
@@ -120,7 +107,7 @@ class _DriverOrdersScreenState extends State<DriverOrdersScreen> {
                         itemCount: pageNames.length,
                         itemBuilder: (context, index) {
                           return ListView.builder(
-                            // physics: const NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             itemCount: 3,
                             itemBuilder: (context, itemIndex) =>
@@ -129,12 +116,12 @@ class _DriverOrdersScreenState extends State<DriverOrdersScreen> {
                         },
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

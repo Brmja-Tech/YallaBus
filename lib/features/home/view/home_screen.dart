@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
+import 'package:sama_bus/features/notifications/notifications.dart';
 
 import '../../available_tickets/view/available_tickets.dart';
 import '../../request_bus/view/request_bus_screen.dart';
@@ -41,22 +42,31 @@ class _HomescreenState extends State<Homescreen> {
         backgroundColor: AppColors.primaryColor,
         title: Padding(
           padding: EdgeInsets.symmetric(horizontal: w * 0.03),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.brown,
                 radius: 22,
                 child: Text(
                   'M',
-                  style: TextStyle(fontSize: 22),
+                  style: const TextStyle(fontSize: 22),
                 ),
               ),
-              Icon(
-                Icons.notifications_none,
-                size: 32,
-                color: Colors.white,
-              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Notifications()),
+                  );
+                },
+                icon: const Icon(
+                  Icons.notifications_none,
+                  size: 32,
+                  color: Colors.white,
+                ),
+              )
             ],
           ),
         ),
@@ -104,10 +114,14 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         Gap(h * 0.01),
                         FilledButton(
-                          onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const RequestBusScreen()),
-                          );},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const RequestBusScreen()),
+                            );
+                          },
                           style: ButtonStyle(
                             fixedSize: WidgetStateProperty.all(
                               Size(w * 0.6, h * 0.04),
@@ -407,7 +421,9 @@ class _HomescreenState extends State<Homescreen> {
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => const AvailableTeckits()),
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AvailableTeckits()),
                                 );
                               },
                               style: ButtonStyle(
@@ -425,7 +441,6 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
                 Gap(h * 0.02),
-
               ],
             ),
           ),

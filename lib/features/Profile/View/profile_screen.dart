@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sama_bus/core/styles/app_colors.dart';
 import 'package:sama_bus/features/Profile/View/components/widget.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -31,16 +30,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 'assets/images/seconedBackground.png',
                 fit: BoxFit.contain,
               ),
-              const Positioned(
+              Positioned(
                 top: 30,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Gap(20),
-                    Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.white,
-                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                    )
                   ],
                 ),
               ),

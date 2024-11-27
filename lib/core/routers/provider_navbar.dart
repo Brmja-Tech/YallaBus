@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:sama_bus/core/styles/app_colors.dart';
 import 'package:sama_bus/features/More/view/more.dart';
-import 'package:sama_bus/features/get_all_tickets/view/get_all_tickets.dart';
+import 'package:sama_bus/features/provider_home_page/view/provider_home_screen.dart';
+import 'package:sama_bus/features/provider_trips/view/provider_trips.dart';
 
-import '../../features/home/view/home_screen.dart';
 
-class BottomNavigationBarExample extends StatefulWidget {
-  const BottomNavigationBarExample({super.key});
+class ProviderBottomNavigationBar extends StatefulWidget {
+  const ProviderBottomNavigationBar({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() =>
-      _BottomNavigationBarExampleState();
+  State<ProviderBottomNavigationBar> createState() =>
+      _ProviderBottomNavigationBarState();
 }
 
-class _BottomNavigationBarExampleState
-    extends State<BottomNavigationBarExample> {
+class _ProviderBottomNavigationBarState
+    extends State<ProviderBottomNavigationBar> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Homescreen(),
-    GetAllTickets(),
+    ProviderProfileScreen(),
+    ProviderTripsScreen(),
     MoreScreen()
   ];
 

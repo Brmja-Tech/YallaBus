@@ -84,8 +84,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                   Gap(30.h),
-                  CustomLoginButton(
-                    text: 'register'.tr(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: CustomLoginButton(
+                      text: 'register'.tr(),
+                    ),
                   ),
                   Gap(30.h),
                   Row(
@@ -129,8 +138,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onPressed: () {
                           Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) =>  LoginScreen()),
-                                (Route<dynamic> route) => false,);
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()),
+                            (Route<dynamic> route) => false,
+                          );
                         },
                         child: Text('login'.tr()),
                       ),
