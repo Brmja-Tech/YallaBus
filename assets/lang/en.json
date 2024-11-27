@@ -53,7 +53,18 @@
     "the_file_size_must_not_exceed_24_MB":"The file size must not exceed 24 MB.",
     "join_us_as_a_driver":"Join us as a driver",
     "attach_company_documents_commercial_register":"Attach company documents (commercial register)",
-    "submit_documents":"Submit documents"
-    
-
+    "submit_documents":"Submit documents",
+    "personal_info":"personal Info",
+    "change":"Change",
+    "save":"Save",
+    "more":"More",
+    "general":"General",
+    "profile":"Profile",
+    "lang":"Language",
+    "about":"About Us",
+    "privacy_policy":"privacy policy",
+    "terms_and_conditions":"Terms and Conditions",
+    "settings":"Settings",
+    "log_out":"Log Out",
+    "price":"Price:"
 }
